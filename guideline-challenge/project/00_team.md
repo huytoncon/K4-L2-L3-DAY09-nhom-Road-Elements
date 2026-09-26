@@ -3,8 +3,8 @@
 Điền trước phút 15. Thay mọi placeholder; còn sót thì `make status` báo ở gate G1.
 
 - **Team:** nhom-Road-Elements (kho `K4-L2-L3-DAY09-nhom-Road-Elements`)
-- **Nhóm peer test bài của mình:** nhóm leductu, nguyenhoangtung, phamanhhuy, vutungdinh (chủ đề Functional Drivable Area)
-- **Nhóm mình test bài của:** cùng nhóm trên (cặp A ↔ B)
+- **Nhóm peer test bài của mình:** nhóm **helloWorld** (leductu, nguyenhoangtung, phamanhhuy, vutungdinh) (chủ đề Functional Drivable Area)
+- **Nhóm mình test bài của:** nhóm **helloWorld** (ghép chéo A ↔ B)
 - **Problem family:** Drivable area (kèm lane marking và crosswalk làm ranh giới)
 - **Nguồn ảnh:** `bdd100k`
 

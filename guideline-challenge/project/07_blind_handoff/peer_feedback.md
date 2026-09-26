@@ -2,7 +2,7 @@
 
 Phần 1 do **nhóm peer** trả lời (gửi kèm file export). Phần 2 do **nhóm owner** điền.
 
-- **Nhóm peer:** nhóm leductu, nguyenhoangtung, phamanhhuy, vutungdinh (chủ đề Functional Drivable Area)
+- **Nhóm peer:** nhóm **helloWorld** (leductu, nguyenhoangtung, phamanhhuy, vutungdinh) (chủ đề Functional Drivable Area)
 - **Người label blind:** thành viên nhóm peer, label trên máy CVAT của owner (tài khoản `dangtruonghuy`); file
   `peer_output/peer_export_roadelements.zip`, task tạo 07:21, export 07:37 UTC
 
