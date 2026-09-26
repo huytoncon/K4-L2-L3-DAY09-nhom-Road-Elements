@@ -11,5 +11,5 @@ BDD25,calibration,low_visibility;edge,mặt đường ướt chạng vạng: th�
 BDD14,blind,normal,cao tốc 3 làn cùng chiều ban ngày: ca chuẩn direct/alternative
 BDD24,blind,edge;occlusion;low_visibility,đống tuyết chắn làn ego: thử rule vật cản chắn hết bề ngang
 BDD13,blind,edge;occlusion,crosswalk vàng + xe đè lên vạch + xe ngược chiều bên trái
-BDD12,blind,critical,vạch vàng đôi với làn ngược chiều ngay bên trái: vẽ nhầm là lỗi critical
-BDD26,blind,ambiguity;low_visibility,đêm rất tối biên trái không rõ: estimated hay escalate
+BDD07,blind,critical;small_far,"vạch vàng đôi sát trái làn ego, xe ngược chiều; vạch sang đường nhỏ ở xa"
+BDD23,blind,ambiguity;occlusion,"phố không vạch, xe đỗ hai bên: 1 chiều hay 2 chiều"

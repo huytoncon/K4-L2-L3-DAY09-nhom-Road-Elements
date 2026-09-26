@@ -109,25 +109,25 @@ Diversity: occlusion, conflict
 ---
 
 CASE ID: EC09
-Sample: BDD12
-Scene: Phố nhiều làn, vạch vàng đôi bên trái, vạch sang đường ngang đường
-Observation: Ego ở làn xe van; SUV đen ở làn cùng chiều bên trái; taxi phía bên kia vạch vàng
+Sample: BDD07
+Scene: Phố 2 chiều, vạch vàng đôi sát bên trái làn ego, xe SUV chạy ngược chiều, vạch sang đường nhỏ ở xa
+Observation: Mặt đường bên kia vạch vàng liền mạch, cùng màu, dễ tô luôn; vạch sang đường xa chỉ cao ~15 px
 Decision: LABEL + IGNORE
-Expected: Không có drivable bên trái vạch vàng; direct = làn van; crosswalk x1
-Rationale: Critical: lấn làn ngược chiều; chọn sai làn ego
-Common mistake: Coi làn SUV là direct vì gần giữa ảnh
-Diversity: critical
+Expected: Không có drivable bên trái vạch vàng đôi; direct = làn SUV trắng, cắt xe; crosswalk ở xa vẫn vẽ
+Rationale: Critical: lấn làn ngược chiều; bỏ sót crosswalk làm planner không giảm tốc
+Common mistake: Tô cả mặt đường bên trái; bỏ sót vạch sang đường nhỏ ở xa
+Diversity: critical, small_far
 
 ---
 
 CASE ID: EC10
-Sample: BDD26
-Scene: Đêm rất tối, bên trái là curb/dải giữa và vùng tối
-Observation: Không thấy chiều đi của vùng bên trái
-Decision: ESCALATE / IGNORE
-Expected: Không có drivable nửa trái ảnh; direct `boundary = estimated`
-Rationale: Không đủ bằng chứng; vẽ đoán có thể thành làn ngược chiều
-Common mistake: Tô cả vùng tối bên trái là alternative
-Diversity: ambiguity, escalation
+Sample: BDD23
+Scene: Phố dân cư không vạch làn, xe đỗ kín hai bên, người đạp xe phía xa
+Observation: Không có vạch tim đường; xe đỗ hai bên đều quay đuôi về camera nên nhiều khả năng là đường 1 chiều, nhưng không có biển xác nhận
+Decision: LABEL hoặc ESCALATE
+Expected: 1 direct phủ lòng đường giữa hai dãy xe đỗ, không alternative; hoặc frame_review=escalate với reason 1 chiều/2 chiều
+Rationale: Không đủ bằng chứng chắc chắn về chiều đi; guideline cho phép escalate
+Common mistake: Chia đôi lòng đường, tô nửa trái thành làn ngược chiều hoặc alternative
+Diversity: ambiguity, escalation, occlusion
 
 ---
