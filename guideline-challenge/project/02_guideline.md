@@ -12,9 +12,12 @@ No hidden rules: rule chỉ giải thích bằng miệng thì coi như không t�
 Ví dụ trong guideline chỉ dùng ảnh split example hoặc calibration, không dùng ảnh blind.
 -->
 
+**Trước khi vẽ:** tạo task bằng **đúng** `03_cvat_labels.json` (dán vào Raw). Mở tab Constructor, kiểm tra đủ 4 label
+`drivable_area`, `lane_marking`, `crosswalk`, `frame_review`. Thiếu label nào thì dừng, sửa task rồi mới vẽ.
+
 **Điểm mới ở v3:**
 
-1. Cách xác định `direct` khi phía trước có nhiều xe ở các làn khác nhau (mục 4).
+1. Cách xác định `direct` khi phía trước có nhiều xe, hoặc khi làn ego bị vật cản chắn (mục 4).
 2. Ngưỡng "vật cản chắn hết bề ngang làn" (mục 5).
 3. Bước tự kiểm bắt buộc cho các attribute có default (`boundary`, `decision`) trước khi export (mục 10).
 
@@ -133,6 +136,8 @@ Bảng này phải khớp với `03_ontology_and_cvat_setup.md` và `03_cvat_lab
   `direct` là làn mà hướng đầu xe đang đi vào. Không chắc thì escalate.
   - Xác định làn ego **ở sát capô rồi dò theo vạch làn lên xa**, không theo chiếc xe gần giữa ảnh nhất. Xe phía trước
     có thể nằm ở làn bên cạnh.
+  - Làn ego **không đổi** khi phía trước bị vật cản chắn (đống tuyết, xe dừng). Phần làn ego trước vật cản vẫn là
+    `direct`; làn bên cạnh còn thông vẫn là `alternative`, dù xe đang đi ở làn đó nhìn "thoáng" hơn.
 - **`alternative`:** mọi làn **cùng chiều** xe đi được, không phải `direct`. Vạch trắng liền, vạch đôi hay gore nằm
   giữa **không** làm làn đó mất tư cách `alternative`.
 - **`style`:** vạch đứt ở gần nhưng liền ở xa (hay ngược lại) thì lấy **kiểu ở đoạn gần xe**.
@@ -227,3 +232,5 @@ Mô tả theo hướng nhìn từ ghế lái. "Trái/phải" là trái/phải c�
 - [ ] Mỗi ảnh có vùng bỏ trống vì nghi ngờ: tag `frame_review` là `escalate` và có `reason`.
 - [ ] Không còn `__undefined__` ở `area_type`, `color`, `style`.
 - [ ] Không polygon nào phủ lên xe/người (trừ phản chiếu trên capô, vật gắn trên xe ego).
+- [ ] `direct` và `alternative` chung cạnh tại tim vạch phân làn, không để khe hở; mép dưới dừng sát capô.
+- [ ] Mỗi vạch sang đường có 1 `crosswalk`; mỗi vạch dọc nhìn thấy có 1 `lane_marking`.

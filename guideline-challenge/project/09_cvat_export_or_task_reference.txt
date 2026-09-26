@@ -3,6 +3,6 @@ CVAT task reference — thay mọi placeholder mới là xong.
 CVAT version: 2.76.0 (http://localhost:8080)
 Task calibration (tên, id): chưa có task calibration độc lập; task viết v2: task 37 "drivable_area" (job 38, 39)
 Task bản cuối theo guideline v3 (tên, id) hoặc lý do không có: chưa có — v3 được viết lúc kết thúc buổi, chưa tạo task mới
-File export đã nộp (đường dẫn trong repo): chưa có export peer hợp lệ trong 07_blind_handoff/peer_output/ (xem peer_feedback.md mục 0)
+File export đã nộp (đường dẫn trong repo): project/07_blind_handoff/peer_output/peer_export_roadelements.zip (bài peer trên blind pack, GTS 75.0)
 Guideline version dán trong Guide của task: v2 (bản đã freeze, gửi trong blind pack)
 Ghi chú cho người tiếp nhận: dán 03_cvat_labels.json (4 label) vào Raw và 02_guideline.md (v3) vào Guide khi tạo task mới; bản v1 lưu ở 02_guideline_v1.md
