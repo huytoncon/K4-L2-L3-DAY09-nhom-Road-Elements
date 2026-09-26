@@ -1,1 +1,17 @@
 sample_id,decision_id,expected,severity,rationale
+BDD14,d1,label=drivable_area direct x1: làn giữa hai vạch trắng đứt chứa x≈640,major,ca chuẩn: làn ego trên cao tốc (guideline mục 4)
+BDD14,d2,label=drivable_area alternative x2: 1 polygon gộp các làn bên trái tới chân guardrail; 1 polygon làn phải tới vạch biên liền,major,mọi làn cùng chiều là alternative; hai phía là hai polygon (mục 2)
+BDD14,d3,geometry: direct cắt sedan bạc phía trước; biên trái/phải trùng tim vạch đứt lệch ≤ 5 px ở y > 450; mép dưới sát capô,minor,mục 3a: cắt xe; biên tại tim vạch phân làn
+BDD14,d4,IGNORE: không có drivable_area trên bãi cỏ và shoulder bên phải vạch biên liền,major,shoulder ngoài vạch biên liền ngoài scope (mục 5)
+BDD24,d1,label=drivable_area direct x1 dừng ở mép dưới đống tuyết; KHÔNG có polygon direct thứ hai phía sau đống tuyết,major,vật cản chắn hết bề ngang làn ego (mục 5)
+BDD24,d2,IGNORE: đống tuyết giữa làn ego và tuyết sát lề trái không nằm trong drivable_area,major,"vật cản tĩnh cắt ra như xe (mục 3a, 5)"
+BDD24,d3,attribute: boundary=estimated trên polygon direct,minor,biên bị tuyết che phải đoán (mục 6)
+BDD24,d4,label=drivable_area alternative x1 cho làn bên trái vạch trắng liền; xe limo trắng cắt ra,major,làn cùng chiều bên kia vạch trắng liền vẫn là alternative (mục 4)
+BDD13,d1,IGNORE: không có drivable_area bên trái vạch vàng đôi (làn có Lexus chạy ngược chiều),critical,vẽ làn ngược chiều là failure nguy hiểm nhất (01_problem_statement câu 3)
+BDD13,d2,label=crosswalk: có polygon crosswalk phủ dải sọc vàng phía trước; Lexus và xe bán tải cắt ra (có thể thành ≥ 2 polygon),major,"mục 3c: vạch sang đường là label riêng, cắt xe"
+BDD13,d3,"geometry: direct cắt xe bán tải trắng phía trước (không phủ lên thân xe, không vẽ phần đường sau xe)",major,mục 3a
+BDD12,d1,IGNORE: không có drivable_area bên trái vạch vàng đôi (phía các taxi),critical,làn ngược chiều bên kia vạch vàng (mục 5)
+BDD12,d2,label=drivable_area direct = làn xe van trắng (giữa hai vạch trắng đứt); SUV đen ở làn alternative bên trái; làn taxi vàng là alternative bên phải,critical,xác định sai làn ego làm planner chọn sai làn (mục 4: điểm x≈640)
+BDD12,d3,label=crosswalk x1 phủ dải sọc trắng ngang đường; drivable_area KHÔNG bị cắt ở vạch sang đường,major,mục 3c và mục 5
+BDD26,d1,attribute: polygon direct có boundary=estimated,major,"đêm, biên làn phải đoán (mục 6)"
+BDD26,d2,IGNORE hoặc ESCALATE: không có drivable_area ở nửa trái ảnh (x < 400) — vùng tối sau curb/dải giữa không rõ chiều đi,minor,ca ambiguity: vùng nghi ngờ không vẽ (mục 7)

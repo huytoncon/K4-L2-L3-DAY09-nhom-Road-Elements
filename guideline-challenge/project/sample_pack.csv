@@ -1,1 +1,15 @@
 sample_id,split,tags,reason
+BDD01,example,normal;edge,cao tốc nhiều làn + gore + nhánh ra: ví dụ alternative sau gore
+BDD04,example,normal,phố 2 chiều vạch vàng đôi không có vạch phải: biên theo xe đỗ
+BDD10,example,normal;conflict,tim đường vàng đứt + làn xe đạp: ví dụ ngược chiều và bike lane
+BDD02,calibration,edge,giao lộ + crosswalk + taxi làn trái: thử rule crosswalk và cắt xe
+BDD16,calibration,edge;low_visibility;occlusion,đường chui tối + chevron vàng + xe phía trước
+BDD18,calibration,low_visibility;edge,đêm có crosswalk: thử boundary estimated
+BDD05,calibration,edge,vạch trắng liền bên phải rồi vùng gạch chéo: thử shoulder/gore
+BDD11,calibration,edge;occlusion,giao lộ crosswalk rộng + người đi bộ: thử crosswalk và cắt người
+BDD25,calibration,low_visibility;edge,mặt đường ướt chạng vạng: thử vệt phản chiếu và vạch làn
+BDD14,blind,normal,cao tốc 3 làn cùng chiều ban ngày: ca chuẩn direct/alternative
+BDD24,blind,edge;occlusion;low_visibility,đống tuyết chắn làn ego: thử rule vật cản chắn hết bề ngang
+BDD13,blind,edge;occlusion,crosswalk vàng + xe đè lên vạch + xe ngược chiều bên trái
+BDD12,blind,critical,vạch vàng đôi với làn ngược chiều ngay bên trái: vẽ nhầm là lỗi critical
+BDD26,blind,ambiguity;low_visibility,đêm rất tối biên trái không rõ: estimated hay escalate

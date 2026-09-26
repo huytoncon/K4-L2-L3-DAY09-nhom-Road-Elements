@@ -1,6 +1,6 @@
 CVAT task reference — thay mọi placeholder mới là xong.
 
-CVAT version: TODO
+CVAT version: 2.76.0 (http://localhost:8080)
 Task calibration (tên, id): TODO
 Task bản cuối theo guideline v3 (tên, id) hoặc lý do không có: TODO
 File export đã nộp (đường dẫn trong repo): TODO
