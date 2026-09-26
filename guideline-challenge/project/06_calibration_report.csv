@@ -1,1 +1,6 @@
 sample_id,item,values_by_annotator,diagnosis,action,rule_change
+BDD16,drivable_area:cut_vehicle,huy=cut; ducanh=through; hung=cut; vietanh=cut,guideline_gap,revise_rule,Cắt xe và vật cản ra khỏi polygon drivable_area và không vẽ phần mặt đường khuất phía sau xe.
+BDD18,attr:boundary,huy=estimated|visible; ducanh=visible|visible; hung=estimated|visible; vietanh=estimated|visible,data_ambiguity,add_example,Cảnh ban đêm hoặc tầm nhìn hạn chế thì ranh giới xa bị mờ/khuất không có vạch rõ ràng thì gán boundary=estimated.
+BDD02,label:crosswalk,huy=crosswalk_polygon; ducanh=in_drivable; hung=crosswalk_polygon; vietanh=crosswalk_polygon,guideline_gap,revise_rule,Thêm label crosswalk (polygon bao cả dải sọc đè lên drivable và cắt xe).
+BDD05,drivable_area:alternative,huy=exclude_shoulder; ducanh=include_shoulder; hung=exclude_shoulder; vietanh=exclude_shoulder,execution_error,coaching,Vùng shoulder ngoài vạch liền trắng biên phải là ngoài scope không được gán alternative.
+BDD25,lane_marking:count,huy=2; ducanh=4; hung=2; vietanh=2,data_ambiguity,add_example,Vệt đèn phản chiếu trên mặt đường ướt không phải vạch sơn kẻ đường không vẽ polyline lane_marking.

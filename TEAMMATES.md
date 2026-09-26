@@ -4,7 +4,7 @@ Kho nhóm (challenge): https://github.com/huytoncon/K4-L2-L3-DAY09-nhom-Road-Ele
 
 | Họ tên | MSSV | GitHub | Mini lab đã chọn | Kho bài cá nhân |
 |---|---|---|---|---|
-| Đặng Trường Huy | 2A202602184 | [huytoncon](https://github.com/huytoncon) | TODO | https://github.com/huytoncon/K4-L2-L3-DAY09-DangTruongHuy-2A202602184 |
+| Đặng Trường Huy | 2A202602184 | [huytoncon](https://github.com/huytoncon) | drivable | https://github.com/huytoncon/K4-L2-L3-DAY09-DangTruongHuy-2A202602184 |
 | Nguyễn Đức Anh | 2A202602049 | TODO | TODO | TODO |
 | Nguyễn Trọng Hùng | 2A202602057 | TODO | TODO | TODO |
 | Nguyễn Xuân Việt Anh | 2A202602102 | TODO | TODO | TODO |
