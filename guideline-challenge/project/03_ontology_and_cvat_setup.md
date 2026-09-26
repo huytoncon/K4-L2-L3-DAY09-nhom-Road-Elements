@@ -34,8 +34,8 @@ placeholder mới là xong (gate G2).
 ## CVAT
 
 - **Phiên bản CVAT** (`python lab9.py cvat`): 2.76.0 tại http://localhost:8080
-- **Tên task calibration** (có version guideline, ví dụ `team07-calib-v1`): TODO
-- **Guide của task đã dán `02_guideline.md`?** TODO (có / chưa)
+- **Tên task calibration** (có version guideline, ví dụ `team07-calib-v1`): chưa có task calibration độc lập (xem ghi chú dưới). Task dùng khi viết v2: task 37 `drivable_area` (job 38, 39) trên CVAT của Đặng Trường Huy
+- **Guide của task đã dán `02_guideline.md`?** Có trong blind pack gửi peer (`guideline.md` = v2 đã freeze); task 37 chưa xác nhận
 - **Nhóm dùng Track hay Shape, vì sao:** Shape — task ảnh tĩnh, mỗi ảnh là một cảnh độc lập, không có đối tượng nào
   cần giữ ID qua nhiều frame.
 
@@ -44,4 +44,5 @@ placeholder mới là xong (gate G2).
 Một thành viên **chưa tham gia setup** mở task và trả lời: label gì, dùng tool nào, gán attribute nào, khi nào
 escalate. Ghi lại ai test và chỗ họ vấp:
 
-TODO
+Chưa thực hiện do hết thời gian buổi lab. Theo hướng dẫn của Lab Coach, bài nhóm tập trung vào guideline v2,
+blind test với peer và guideline v3; setup test và calibration độc lập ghi là việc còn thiếu.

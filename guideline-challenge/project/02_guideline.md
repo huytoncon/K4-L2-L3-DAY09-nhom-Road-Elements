@@ -1,6 +1,6 @@
 # Annotation guideline — Road surface: drivable area, vạch làn, vạch sang đường
 
-**Version:** v2
+**Version:** v3
 
 <!--
 v0 = chưa có bản nháp. Đổi dòng Version ở trên thành v1 khi xong bản nháp đầu, v2 sau calibration, v3 sau blind
@@ -12,7 +12,13 @@ No hidden rules: rule chỉ giải thích bằng miệng thì coi như không t�
 Ví dụ trong guideline chỉ dùng ảnh split example hoặc calibration, không dùng ảnh blind.
 -->
 
-**Điểm mới so với v1:**
+**Điểm mới ở v3:**
+
+1. Cách xác định `direct` khi phía trước có nhiều xe ở các làn khác nhau (mục 4).
+2. Ngưỡng "vật cản chắn hết bề ngang làn" (mục 5).
+3. Bước tự kiểm bắt buộc cho các attribute có default (`boundary`, `decision`) trước khi export (mục 10).
+
+**Điểm mới ở v2 so với v1:**
 
 1. Cắt xe/người ra khỏi polygon, thay cho quy tắc "vẽ xuyên qua" (mục 3, 6).
 2. Thêm label `lane_marking` (polyline) cho vạch làn (mục 3b, 4).
@@ -125,6 +131,8 @@ Bảng này phải khớp với `03_ontology_and_cvat_setup.md` và `03_cvat_lab
 - **Là attribute:** `direct`/`alternative`, màu và kiểu vạch. Đây là thuộc tính của cùng một loại đối tượng.
 - **`direct`:** làn chứa **điểm giữa mép dưới vùng đường** (x ≈ 640). Nếu vạch làn nằm trong ±64 px quanh điểm này,
   `direct` là làn mà hướng đầu xe đang đi vào. Không chắc thì escalate.
+  - Xác định làn ego **ở sát capô rồi dò theo vạch làn lên xa**, không theo chiếc xe gần giữa ảnh nhất. Xe phía trước
+    có thể nằm ở làn bên cạnh.
 - **`alternative`:** mọi làn **cùng chiều** xe đi được, không phải `direct`. Vạch trắng liền, vạch đôi hay gore nằm
   giữa **không** làm làn đó mất tư cách `alternative`.
 - **`style`:** vạch đứt ở gần nhưng liền ở xa (hay ngược lại) thì lấy **kiểu ở đoạn gần xe**.
@@ -144,7 +152,7 @@ Bảng này phải khớp với `03_ontology_and_cvat_setup.md` và `03_cvat_lab
 | Làn bus ghi rõ "BUS ONLY" hoặc sơn đỏ | Không vẽ. Đọc không rõ chữ → escalate |
 | Ô tô, xe tải, bus, xe máy, xe đạp, người trên làn (chạy hay dừng) | Cắt ra khỏi `drivable_area` và `crosswalk` (mục 3a) |
 | Đống tuyết, cọc, rào chắn, cone trên làn | Cắt ra, giống xe |
-| **Vật cản chắn hết bề ngang làn ego** (ví dụ đống tuyết giữa làn) | `direct` dừng ở mép dưới vật cản. Phần làn phía sau vật cản **không** vẽ, không tạo polygon `direct` thứ hai |
+| **Vật cản chắn hết bề ngang làn ego** (chiếm ≥ 80% bề ngang làn tại mép dưới vật cản; ví dụ đống tuyết giữa làn) | `direct` dừng ở mép dưới vật cản. Phần làn phía sau vật cản **không** vẽ, không tạo polygon `direct` thứ hai |
 | Đường không vạch, 1 chiều, xe đỗ hai bên | Toàn bộ lòng đường giữa hai dãy xe đỗ là `direct` |
 | Đường không vạch, 2 chiều, không phân biệt được hai nửa | Escalate |
 | Vệt nghi là vạch sang đường nhưng quá tối/mờ để chắc | Không vẽ `crosswalk`; nếu ảnh hưởng quyết định drivable thì escalate |
@@ -212,3 +220,10 @@ Mô tả theo hướng nhìn từ ghế lái. "Trái/phải" là trái/phải c�
 10. **Nhầm vệt đèn phản chiếu trên đường ướt là vạch sơn.**
 11. **Cắt drivable ở vạch sang đường**, hoặc gộp vạch dừng vào `crosswalk`.
 12. **Quên tag `frame_review`**, hoặc `escalate` mà để trống `reason`.
+
+**Tự kiểm bắt buộc trước khi export** (các attribute có default dễ bị giữ nguyên mà không xét):
+
+- [ ] Mỗi polygon ở ảnh tối/tuyết/mưa hoặc bị che: đã **chủ động** chọn `boundary` (`visible` hay `estimated`).
+- [ ] Mỗi ảnh có vùng bỏ trống vì nghi ngờ: tag `frame_review` là `escalate` và có `reason`.
+- [ ] Không còn `__undefined__` ở `area_type`, `color`, `style`.
+- [ ] Không polygon nào phủ lên xe/người (trừ phản chiếu trên capô, vật gắn trên xe ego).
